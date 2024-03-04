@@ -1,10 +1,10 @@
 <?php
 include ('includes/header.php');
-// conectamos a la base de datos
+
 require ('resources/db/connect-db.php');
-// obtenemos los resultados de la base de datos mediante la consulta
+
 try {
-    //configuramos el prepared statement
+
     $stmt = $dbh->prepare('SELECT * FROM clients');
     $stmt->execute();
 

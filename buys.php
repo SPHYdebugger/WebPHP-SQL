@@ -1,6 +1,16 @@
 <?php
 require("includes/header.php");
-require ('resources\db\Buy\arrayBuys.php');
+require ('resources/db/connect-db.php');
+
+try {
+
+    $stmt = $dbh->prepare('SELECT * FROM buys');
+    $stmt->execute();
+
+    $resultado = $stmt->fetchAll(PDO::FETCH_ASSOC);
+} catch (PDOException $e) {
+    echo "ERROR: " . $e->getMessage();
+}
 ?>
 
     <main role="main" >
@@ -9,14 +19,14 @@ require ('resources\db\Buy\arrayBuys.php');
             <?php
             if(isset($_SESSION['usuario_logado'])) { ?>
                 <div class="d-flex justify-content-center">
-                    <a href="" class="btn btn-primary my-2">Registrar una compra</a>
+                    <a href="addBuy.php" class="btn btn-primary my-2">Registrar una compra</a>
                 </div>
             <?php }?>
             <h2 style="text-align: center;">LISTA DE COMPRAS</h2>
             <table class="table container" style="margin-top: 50px">
                 <div class="container d-flex justify-content-center">
                     <tr>
-                        <th>ID DE COMPRA</th>
+                        <th>USUARIO QUE VENDE</th>
                         <th>CLIENTE</th>
                         <th>PRODUCTO</th>
                         <th>FECHA COMPRA</th>
@@ -25,19 +35,16 @@ require ('resources\db\Buy\arrayBuys.php');
                         <?php } ?>
                     </tr>
                     <?php
-                    foreach ($buysJson as $buy) : ?>
+                    foreach ($resultado as $buy) : ?>
                         <tr>
-                            <td><?php echo $buy->getIdBuy(); ?></td>
-                            <td><?php echo $buy->getClient(); ?></td>
-                            <td><?php echo $buy->getProduct(); ?></td>
-                            <td><?php echo $buy->getBuyDate(); ?></td>
+                            <td><?php echo $buy['usuario']; ?></td>
+                            <td><?php echo $buy['cliente']; ?></td>
+                            <td><?php echo $buy['producto']; ?></td>
+                            <td><?php echo $buy['fecha_compra']; ?></td>
                             <?php
                             if(isset($_SESSION['usuario_logado'])) { ?>
                                 <td>
-                                    <form method="post" action="">
-                                        <input type="hidden" name="deleteBuy" value="<?php echo $buy->getIdBuy(); ?>">
-                                        <button type="submit" class="btn btn-primary btn-sm my-2">BORRAR</button>
-                                    </form>
+                                    <a href="resources/db/Buy/deletebuy.php?id=<?php echo $buy['ID']; ?>" class="btn btn-primary">BORRAR</a>
                                 </td>
                             <?php } ?>
                         </tr>
