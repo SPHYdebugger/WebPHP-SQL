@@ -41,5 +41,5 @@ require("../../includes/header.php");
 </main>
 
 <?php
-include("includes/footer.php");
+include("../../includes/footer.php");
 ?>

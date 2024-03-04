@@ -9,8 +9,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $contrasena_ingresada = $_POST['contrasena'];
 
     try {
-        $stmt = $dbh->prepare("SELECT contraseña FROM users WHERE nombre = :nombre");
-        $stmt->bindParam(':nombre', $nombre_usuario, PDO::PARAM_STR);
+        $stmt = $dbh->prepare("SELECT contraseña FROM users WHERE usuario = :usuario");
+        $stmt->bindParam(':usuario', $nombre_usuario, PDO::PARAM_STR);
         $stmt->execute();
 
         // Obtener la contraseña

@@ -1,5 +1,5 @@
 <?php
-include '../db/headerPost.php';
+include ('../db/headerPost.php');
 
 require ('../db/connect-db.php');
 

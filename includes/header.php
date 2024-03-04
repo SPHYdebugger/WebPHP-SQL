@@ -31,6 +31,10 @@ session_start();
         .btn-secondary{
             background-color: violet;
         }
+        .btn-primary{
+            background-color: #96A9B8;
+        }
+
     </style>
 
 
@@ -59,7 +63,7 @@ session_start();
                 </ul>
                 <?php
                 if(isset($_SESSION['usuario_logado'])) {
-                    echo "usuario: " . $_SESSION['usuario_logado'];
+                    echo "BIENVENID@ " . $_SESSION['usuario_logado'];
                 ?>
                     <p><a class="btn btn-lg btn-primary" href="../Stetic100/resources/register/logout.php" role="button" style="margin-left: 10px">LogOut</a></p>
                 <?php

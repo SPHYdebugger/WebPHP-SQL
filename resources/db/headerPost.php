@@ -57,7 +57,7 @@ session_start();
                 </ul>
                 <?php
                 if(isset($_SESSION['usuario_logado'])) {
-                    echo "usuario: " . $_SESSION['usuario_logado'];
+                    echo "BIENVENIDO  " . $_SESSION['usuario_logado'];
                 ?>
                     <p><a class="btn btn-lg btn-primary" href="resources/register/logout.php" role="button" style="margin-left: 10px">LogOut</a></p>
                 <?php
