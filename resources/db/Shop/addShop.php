@@ -53,7 +53,7 @@ include 'arrayShops.php';
 
     ?>
     </br>
-    <a href="../../../shops.php" class="btn btn-primary my-2">Volver a tiendas</a>
+    <a href="../../../Views/shops.php" class="btn btn-primary my-2">Volver a tiendas</a>
 
 </div>
 <?php

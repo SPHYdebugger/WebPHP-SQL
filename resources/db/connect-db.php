@@ -7,7 +7,7 @@ $password = "";
 $server = 'localhost';
 $dbh = "";
 
-// Con un array de opciones
+
 try {
     $dsn = "mysql:host=$server;dbname=$dbname;charset=UTF8";
     $dbh = new PDO($dsn, $user, $password);

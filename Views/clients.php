@@ -1,29 +1,10 @@
-<?php
-include ('includes/header.php');
-
-require ('resources/db/connect-db.php');
-
-try {
-
-    $stmt = $dbh->prepare('SELECT * FROM clients');
-    $stmt->execute();
-
-    $resultado = $stmt->fetchAll(PDO::FETCH_ASSOC);
-} catch (PDOException $e) {
-    echo "ERROR: " . $e->getMessage();
-}
-
-
-
-?>
-
 <main role="main" >
 
     <div class="container" style="margin-top: 150px">
         <?php
         if(isset($_SESSION['usuario_logado'])) { ?>
             <div class="d-flex justify-content-center">
-            <a href="addClient.php" class="btn btn-primary my-2">Registrar un cliente</a>
+            <a href="../addClient.php" class="btn btn-primary my-2">Registrar un cliente</a>
             </div>
         <?php }?>
         <h2 style="text-align: center;">LISTA DE CLIENTES</h2>
@@ -51,7 +32,7 @@ try {
                                     <?php
                                     if (isset($_SESSION['usuario_logado'])) { ?>
                                         <td>
-                                            <form method="post" action="editClient.php">
+                                            <form method="post" action="../Controllers/client_controller.php?action=edit_one">
                                                 <input type="hidden" name="editClient" value="<?php echo $client['ID']; ?>">
                                                 <button type="submit" class="btn btn-primary btn-sm my-2">EDITAR</button>
                                             </form>
@@ -60,7 +41,7 @@ try {
                                     <?php
                                     if (isset($_SESSION['usuario_logado'])) { ?>
                                         <td>
-                                            <form method="post" action="resources/db/Client/deleteClient.php">
+                                            <form method="post" action="../Controllers/client_controller.php?action=delete_one">
                                                 <input type="hidden" name="deleteClient" value="<?php echo $client['ID']; ?>">
                                                 <button type="submit" class="btn btn-primary btn-sm my-2">BORRAR</button>
                                             </form>
@@ -78,11 +59,8 @@ try {
     </div>
 
     <div class="d-flex justify-content-center">
-        <a href="index.php" class="btn btn-primary my-2">Volver a inicio</a>
+        <a href="../index.php" class="btn btn-primary my-2">Volver a inicio</a>
     </div>
 
 </main>
 
-<?php
-include("includes/footer.php");
-?>

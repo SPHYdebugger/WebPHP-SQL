@@ -24,7 +24,7 @@ require("includes/header.php");
     </form>
 
     <div class="container  d-flex justify-content-center">
-        <a href="shops.php" type="button" class="btn btn-primary col-4" style="margin-top: 20px;">Volver a la lista de TIENDAS</a>
+        <a href="Views/shops.php" type="button" class="btn btn-primary col-4" style="margin-top: 20px;">Volver a la lista de TIENDAS</a>
     </div>
 </div>
 

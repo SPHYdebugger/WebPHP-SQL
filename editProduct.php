@@ -55,7 +55,7 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
         </form>
 
         <div class="container  d-flex justify-content-center">
-            <a href="products.php" type="button" class="btn btn-primary col-4" style="margin-top: 20px;">Volver a la lista de productos</a>
+            <a href="Views/products.php" type="button" class="btn btn-primary col-4" style="margin-top: 20px;">Volver a la lista de productos</a>
         </div>
     </div>
 </main>

@@ -64,14 +64,14 @@ setcookie("accederUbicacion","permitir utilizar la ubicación");
                     <img class="rounded-circle" src="resources/images/cliente.png" alt="Generic placeholder image" width="140" height="140">
                     <h2>CLIENTES</h2>
                     <p style="min-height: 90px">Entra para registrar un cliente nuevo, editar o borrar uno existente, listarlos todos o buscar uno.</p>
-                    <p><a class="btn btn-secondary" href="clients.php" role="button">ENTRAR &raquo;</a></p>
+                    <p><a class="btn btn-secondary" href="Controllers/client_controller.php?action=list_all" role="button">ENTRAR &raquo;</a></p>
 
                 </div>
                 <div class="col-lg-4">
                     <img class="rounded-circle" src="resources/images/productos.png" alt="Generic placeholder image" width="140" height="140">
                     <h2>PRODUCTOS</h2>
                     <p style="min-height: 90px">Entra para registrar un producto nuevo, editar o borrar uno existente, listarlos todos o buscar uno.</p>
-                    <p><a class="btn btn-secondary" href="products.php" role="button">ENTRAR &raquo;</a></p>
+                    <p><a class="btn btn-secondary" href="Views/products.php" role="button">ENTRAR &raquo;</a></p>
                 </div>
 
                 <?php
@@ -82,7 +82,7 @@ setcookie("accederUbicacion","permitir utilizar la ubicación");
                         <h2>COMPRAS</h2>
                         <p style="min-height: 90px">Entra para registrar una compra nueva, editar o borrar una existente, listarlas todas o buscar una.</p>
 
-                        <p><a class="btn btn-secondary" href="buys.php" role="button">ENTRAR &raquo;</a></p>
+                        <p><a class="btn btn-secondary" href="Views/buys.php" role="button">ENTRAR &raquo;</a></p>
 
                     </div>
                 <?php

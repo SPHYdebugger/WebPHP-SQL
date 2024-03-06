@@ -35,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['detailsShop'])) {
         </div>
     </div>
     <div class="d-flex justify-content-center">
-        <a href="shops.php" class="btn btn-primary my-2">Volver a tiendas</a>
+        <a href="Views/shops.php" class="btn btn-primary my-2">Volver a tiendas</a>
     </div>
 </main>
 

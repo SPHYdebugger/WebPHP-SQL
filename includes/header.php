@@ -52,13 +52,13 @@ session_start();
             <div class="collapse navbar-collapse" style="background-color: #EAD0D1;" id="navbarCollapse">
                 <ul class="navbar-nav mr-auto" >
                     <li class="nav-item active">
-                        <a class="nav-link" href="../Stetic100/index.php" style="color: black;">INICIO <span class="sr-only"></span></a>
+                        <a class="nav-link" href="../index.php" style="color: black;">INICIO <span class="sr-only"></span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../Stetic100/index.php#eventos" style="color: black;">EVENTOS</a>
+                        <a class="nav-link" href="../index.php#eventos" style="color: black;">EVENTOS</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../Stetic100/shops.php" style="color: black;">CONTACTO</a>
+                        <a class="nav-link" href="../shops.php" style="color: black;">CONTACTO</a>
                     </li>
                 </ul>
                 <?php

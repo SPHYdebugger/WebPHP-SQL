@@ -39,7 +39,7 @@ require("includes/header.php");
         </form>
 
         <div class="container  d-flex justify-content-center">
-            <a href="clients.php" type="button" class="btn btn-primary col-4" style="margin-top: 20px;">Volver a la lista de productos</a>
+            <a href="Views/clients.php" type="button" class="btn btn-primary col-4" style="margin-top: 20px;">Volver a la lista de productos</a>
         </div>
     </div>
 </main>
