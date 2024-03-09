@@ -5,7 +5,7 @@ require('../resources/db/connect-db.php');
 if(isset($_GET['action'])) {
     $action = $_GET['action'];
 
-    // Realizar diferentes acciones basadas en el valor de "action"
+    // Acciones basadas en el valor de "action"
     switch($action) {
         case 'list_all':
             //listar todos los clientes
@@ -15,6 +15,8 @@ if(isset($_GET['action'])) {
             //borrar un cliente
             delete_one($dbh);
             break;
+
+
         case 'edit_one':
             //mostrar formulario
             show_edit_form($dbh);
@@ -25,6 +27,14 @@ if(isset($_GET['action'])) {
             return;
 
 
+        case 'add_one':
+            //mostrar formulario
+            show_add_form($dbh);
+            return;
+        case 'add_client':
+            //añadir un cliente
+            add_client($dbh);
+            return;
 
 
 
@@ -39,54 +49,64 @@ if(isset($_GET['action'])) {
 function list_all($dbh)
 {
     include('../includes/header.php');
-
     require ('../Models/client_model.php');
 
     $resultado = list_all_clients($dbh);
 
     include ('../Views/clients.php');
-
     include("../includes/footer.php");
 }
 
 function delete_one($dbh)
 {
-    include('../includes/header.php');
-
     require ('../Models/client_model.php');
-
     delete_one_client($dbh);
-
-    include ('../Views/clients.php');
-
-    include("../includes/footer.php");
 }
-
-
-
-
 
 function show_edit_form($dbh)
 {
     include('../includes/header.php');
-
     require ('../Models/client_model.php');
 
     $client= get_one_client($dbh);
 
     include ('../Views/editClientForm.php');
-
     include("../includes/footer.php");
 }
 
 function edit_client($dbh){
-
+    include('../includes/header.php');
     require ('../Models/client_model.php');
+
     edit_one_client($dbh);
+    $client= get_client($dbh);
+    $tamano= count_clients($dbh);
 
+    include ('../Views/showClient.php');
+    include("../includes/footer.php");
+}
+
+
+
+function show_add_form($dbh)
+{
+    include('../includes/header.php');
+    include ('../Views/addClientForm.php');
+    include("../includes/footer.php");
+}
+function add_client($dbh)
+{
+    include('../includes/header.php');
+    require ('../Models/client_model.php');
+
+    add_one_client($dbh);
+    $client= get_client($dbh);
+    $tamano= count_clients($dbh);
+
+    include('../Views/showClient.php');
+    include("../includes/footer.php");
 
 }
 
-function default_action(){
 
-}
+

@@ -1,6 +1,3 @@
-<?php
-require("includes/header.php");
-?>
 
 <main>
 
@@ -11,14 +8,14 @@ require("includes/header.php");
 
 
     <div class="container col-6">
-        <form action="resources/db/Client/addClient.php" method="post" enctype= "multipart/form-data">
+        <form action="../Controllers/client_controller.php?action=add_client" method="post" enctype= "multipart/form-data">
             <div class="mb-3">
                 <label for="DNI" class="form-label">DNI</label>
                 <input type="text" class="form-control" id="DNI" name="DNI">
             </div>
             <div class="mb-3">
-                <label for="firstName" class="form-label">NOMBRE</label>
-                <input type="text" class="form-control" id="firstName" name="firstName">
+                <label for="nombre" class="form-label">NOMBRE</label>
+                <input type="text" class="form-control" id="nombre" name="nombre">
             </div>
             <div class="mb-3">
                 <label for="email" class="form-label">EMAIL</label>
@@ -31,14 +28,11 @@ require("includes/header.php");
         </form>
 
         <div class="container  d-flex justify-content-center">
-            <a href="Views/clients.php" type="button" class="btn btn-primary col-4" style="margin-top: 20px;">Volver a la lista de clientes</a>
+            <a href="../Controllers/client_controller.php" type="button" class="btn btn-primary col-4" style="margin-top: 20px;">Volver a la lista de clientes</a>
         </div>
     </div>
 </main>
 
-<?php
-include("includes/footer.php");
-?>
 
 
 

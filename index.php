@@ -71,7 +71,7 @@ setcookie("accederUbicacion","permitir utilizar la ubicación");
                     <img class="rounded-circle" src="resources/images/productos.png" alt="Generic placeholder image" width="140" height="140">
                     <h2>PRODUCTOS</h2>
                     <p style="min-height: 90px">Entra para registrar un producto nuevo, editar o borrar uno existente, listarlos todos o buscar uno.</p>
-                    <p><a class="btn btn-secondary" href="Views/products.php" role="button">ENTRAR &raquo;</a></p>
+                    <p><a class="btn btn-secondary" href="Controllers/product_controller.php?action=list_all" role="button">ENTRAR &raquo;</a></p>
                 </div>
 
                 <?php

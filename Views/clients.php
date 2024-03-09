@@ -4,7 +4,7 @@
         <?php
         if(isset($_SESSION['usuario_logado'])) { ?>
             <div class="d-flex justify-content-center">
-            <a href="../addClient.php" class="btn btn-primary my-2">Registrar un cliente</a>
+            <a href="../Controllers/client_controller.php?action=add_one" class="btn btn-primary my-2">Registrar un cliente</a>
             </div>
         <?php }?>
         <h2 style="text-align: center;">LISTA DE CLIENTES</h2>

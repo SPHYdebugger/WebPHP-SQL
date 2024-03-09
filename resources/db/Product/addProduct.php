@@ -1,11 +1,8 @@
 <?php
-include ('../headerPost.php');
+include('../headerPost.php');
 require ('../connect-db.php');
 require ('../../../Classes/Product.php');
-?>
-<div class="container" style="margin-top: 150px; text-align: center; margin-bottom: 100px">
 
-    <?php
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         if (isset($_POST['nombre']) && isset($_POST['precio'])) {
@@ -54,15 +51,7 @@ require ('../../../Classes/Product.php');
             } catch (PDOException $e) {
                 echo "ERROR: " . $e->getMessage();
             }
-            ?>
 
-            <h2>Producto registrado con éxito</h2>
-
-            <p>Nombre del producto: <?php echo $nombre ?></p>
-            <p>Descripción del producto: <?php echo $descripcion ?></p>
-            <p>Precio del producto: <?php echo $precio ?></p>
-
-            <?php
             try {
 
                 $stmt = $dbh->prepare("SELECT COUNT(*) FROM products;");
@@ -79,10 +68,5 @@ require ('../../../Classes/Product.php');
             <?php
         }
     }
-    ?>
-    <br>
-    <a href="..\..\..\products.php" class="btn btn-primary my-2">Volver a productos</a>
-</div>
-<?php
-require('../../../includes/footer.php');
 ?>
+

@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-require ('../../resources/db/connect-db.php');
+require ('../db/connect-db.php');
 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             if ($contraseña == $contrasena_ingresada) {
                 $_SESSION['usuario_logado'] = $nombre_usuario;
-                header('Location: ..\..\index.php');
+                header('Location: ../../../Stetic100/index.php');
                 exit();
             } else {
                 $mensaje_error = 'Contraseña incorrecta';

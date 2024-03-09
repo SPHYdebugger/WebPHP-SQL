@@ -65,12 +65,12 @@ session_start();
                 if(isset($_SESSION['usuario_logado'])) {
                     echo "BIENVENID@ " . $_SESSION['usuario_logado'];
                 ?>
-                    <p><a class="btn btn-lg btn-primary" href="../Stetic100/resources/register/logout.php" role="button" style="margin-left: 10px">LogOut</a></p>
+                    <p><a class="btn btn-lg btn-primary" href="../../Stetic100/resources/register/logout.php" role="button" style="margin-left: 10px">LogOut</a></p>
                 <?php
                 }else{
                 ?>
-                    <p><a class="btn btn-lg btn-primary" href="../Stetic100/resources/register/logIn.php" role="button">LogIn</a></p>
-                    <p style="margin-left: 10px;"><a class="btn btn-lg btn-primary" href="../Stetic100/resources/register/signUp.php" role="button">Sign up</a></p>
+                    <p><a class="btn btn-lg btn-primary" href="../../Stetic100/resources/register/logIn.php" role="button">LogIn</a></p>
+                    <p style="margin-left: 10px;"><a class="btn btn-lg btn-primary" href="../../Stetic100/resources/register/signUp.php" role="button">Sign up</a></p>
                 </form>
                 <?php
                 }

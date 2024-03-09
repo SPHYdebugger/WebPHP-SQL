@@ -10,7 +10,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="Tienda WEB APP" content="">
     <meta name="Santiago Perez" content="">
-    <link rel="icon" href="resources/images/flor.png">
+    <link rel="icon" href="../resources/images/flor.png">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
     <title>STETIC100 Tienda WEB </title>
@@ -38,7 +38,7 @@ session_start();
     <header>
         <nav class="navbar navbar-expand-md navbar-dark fixed-top" style="padding: 5px; background-color: #EAD0D1; height: 80px; ">
             <a class="navbar-brand" href="index.php">
-                <img src="..\..\images\logo.png" alt="" style="width: 120px; height: 80px; margin: -8%;">
+                <img src="../resources/images/logo.png" alt="" style="width: 120px; height: 80px; margin: -8%;">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -46,24 +46,24 @@ session_start();
             <div class="collapse navbar-collapse" style="background-color: #EAD0D1;" id="navbarCollapse">
                 <ul class="navbar-nav mr-auto" >
                     <li class="nav-item active">
-                        <a class="nav-link" href="../../index.php" style="color: black;">INICIO <span class="sr-only"></span></a>
+                        <a class="nav-link" href="../index.php" style="color: black;">INICIO <span class="sr-only"></span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../../index.php#eventos" style="color: black;">EVENTOS</a>
+                        <a class="nav-link" href="../index.php#eventos" style="color: black;">EVENTOS</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../../Views/shops.php" style="color: black;">CONTACTO</a>
+                        <a class="nav-link" href="../Views/shops.php" style="color: black;">CONTACTO</a>
                     </li>
                 </ul>
                 <?php
                 if(isset($_SESSION['usuario_logado'])) {
                     echo "BIENVENIDO  " . $_SESSION['usuario_logado'];
                 ?>
-                    <p><a class="btn btn-lg btn-primary" href="resources/register/logout.php" role="button" style="margin-left: 10px">LogOut</a></p>
+                    <p><a class="btn btn-lg btn-primary" href="../resources/register/logout.php" role="button" style="margin-left: 10px">LogOut</a></p>
                 <?php
                 }else{
                 ?>
-                    <p><a class="btn btn-lg btn-primary" href="resources/register/logIn.php" role="button">LogIn</a></p>
+                    <p><a class="btn btn-lg btn-primary" href="../resources/register/logIn.php" role="button">LogIn</a></p>
                 </form>
                 <?php
                 }
