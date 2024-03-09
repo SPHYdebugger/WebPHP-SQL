@@ -14,8 +14,8 @@
         <div class="card" >
             <img src="../Controllers/product_controller.php?action=get_image&id=<?php echo $product['ID']; ?>" class="card-img-top" alt="...">
             <div class="card-body">
-                <h5 class="card-title"><?php echo $product['nombre'];?></h5>
-                <p class="card-text" style="min-height: 100px;"><?php echo $product['descripcion']; ?></p>
+                <h5 class="card-title">NOMBRE: <?php echo $product['nombre'];?></h5>
+                <p class="card-text" style="min-height: 100px;">DESCRIPCIÓN: <?php echo $product['descripcion']; ?></p>
                 <strong class="card-text" style="display:block; text-align: right;">PRECIO <?php echo $product['precio']; ?> €</strong>
                 <p class="card-text" style="display: block; text-align: center; background-color: #EAD0D1; margin-bottom: 20px;">CATEGORÍA:  <?php echo $product['categoria'];?> </p>
 

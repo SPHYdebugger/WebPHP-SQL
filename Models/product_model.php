@@ -114,8 +114,6 @@ function get_product($dbh)
             } catch (PDOException $e) {
                 echo "ERROR: " . $e->getMessage();
             }
-
-
         }
     }
 
@@ -159,7 +157,6 @@ function edit_one_product($dbh)
 
 function add_one_product($dbh)
 {
-
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         if (isset($_POST['nombre']) && isset($_POST['precio'])) {
@@ -169,21 +166,16 @@ function add_one_product($dbh)
             $precio = $_POST['precio'];
             $categoria = $_POST['categoria'];
 
-
-
             if(isset($_FILES['image']) && !empty($_FILES['image']['tmp_name'])) {
                 $imagen_nombre = $_FILES['image']['name'];
                 $imagen_tipo = $_FILES['image']['type'];
                 $imagen_tamaño = $_FILES['image']['size'];
                 $imagen_tmp = $_FILES['image']['tmp_name'];
-
-
                 $imagen_contenido = file_get_contents($imagen_tmp);
             } else {
                 // Si no se envió una imagen, utiliza una imagen por defecto
                 $imagen_contenido = file_get_contents('resources/images/productos.png');
             }
-
             try {
 
                 $product = new Product(null, $nombre, $descripcion, $precio, $categoria);

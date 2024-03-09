@@ -23,6 +23,7 @@
                             <p class="card-text" style="min-height: 100px;"><?php echo $product->getDescripcion(); ?></p>
                             <strong class="card-text" style="display:block; text-align: right;">PRECIO <?php echo $product->getPrecio(); ?> €</strong>
                             <p class="card-text" style="display: block; text-align: center; background-color: #EAD0D1; margin-bottom: 20px;">CATEGORÍA:  <?php echo $product->getCategoria(); ?> </p>
+                            <div style="display: ruby-text;">
                             <?php
                             if (isset($_SESSION['usuario_logado'])) { ?>
                                 <td>
@@ -41,6 +42,7 @@
                                     </form>
                                 </td>
                             <?php } ?>
+                            </div>
                         </div>
                     </div>
                 </div>

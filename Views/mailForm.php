@@ -1,10 +1,7 @@
-<?php
-require("includes/header.php");
-?>
 
 <div class="container col-4" style="margin-top: 150px; margin-bottom: 50px" >
     <h2>ENVÍO DE MAIL</h2>
-    <form action="resources/mail/sendMail.php" method="post" >
+    <form action="../Controllers/shop_controller.php?action=send_mail" method="post" >
         <div class="mb-3">
             <label for="to" class="form-label">Destinatario:</label>
             <input type="email" id="to" name="to" required>
@@ -24,16 +21,12 @@ require("includes/header.php");
     </form>
 
     <div class="container  d-flex justify-content-center">
-        <a href="Views/shops.php" type="button" class="btn btn-primary col-4" style="margin-top: 20px;">Volver a la lista de TIENDAS</a>
+        <a href="shops.php" type="button" class="btn btn-primary col-4" style="margin-top: 20px;">Volver a la lista de TIENDAS</a>
     </div>
 </div>
 
 
 
 
-
-<?php
-include("includes/footer.php");
-?>
 
 
