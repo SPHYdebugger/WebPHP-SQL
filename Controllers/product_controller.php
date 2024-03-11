@@ -106,7 +106,7 @@ function show_add_form()
 }
 function add_product($dbh)
 {
-    include('../includes/headerPost.php');
+    include('../includes/headerIndex.php');
     require ('../Models/product_model.php');
 
     add_one_product($dbh);

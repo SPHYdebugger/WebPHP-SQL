@@ -1,5 +1,5 @@
 <?php
-require('includes/header.php');
+require('includes/headerIndex.php');
 require('resources/db/connect-db.php');
 setcookie("idioma","selecionar la opción de idioma");
 setcookie("accederUbicacion","permitir utilizar la ubicación");
@@ -82,7 +82,7 @@ setcookie("accederUbicacion","permitir utilizar la ubicación");
                         <h2>COMPRAS</h2>
                         <p style="min-height: 90px">Entra para registrar una compra nueva, editar o borrar una existente, listarlas todas o buscar una.</p>
 
-                        <p><a class="btn btn-secondary" href="Views/buys.php" role="button">ENTRAR &raquo;</a></p>
+                        <p><a class="btn btn-secondary" href="Controllers/buy_controller.php" role="button">ENTRAR &raquo;</a></p>
 
                     </div>
                 <?php

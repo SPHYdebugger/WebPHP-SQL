@@ -60,6 +60,4 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
     </div>
 </main>
 
-<?php
-include("includes/footer.php");
-?>
+

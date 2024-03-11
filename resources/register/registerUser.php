@@ -1,5 +1,5 @@
 <?php
-include('../db/headerPost.php');
+include('../../includes/header.php');
 
 require ('../db/connect-db.php');
 
@@ -17,10 +17,6 @@ require ('../db/connect-db.php');
             $password = $_POST['password'];
             $mail = $_POST['mail'];
 
-            echo $nombre;
-            echo $usuario;
-            echo $password;
-            echo $mail;
 
             try {
                 $stmt = $dbh->prepare("INSERT INTO users (nombre, usuario, contraseña, mail) VALUES (:nombre, :usuario, :password, :mail)");

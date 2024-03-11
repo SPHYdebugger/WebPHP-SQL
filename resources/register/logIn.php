@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             if ($contraseña == $contrasena_ingresada) {
                 $_SESSION['usuario_logado'] = $nombre_usuario;
-                header('Location: ../../../Stetic100/index.php');
+                header('Location: ../../index.php');
                 exit();
             } else {
                 $mensaje_error = 'Contraseña incorrecta';
@@ -56,6 +56,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <input type="password" id="contrasena" name="contrasena" required><br><br>
     <button type="submit">Iniciar Sesión</button>
 </form>
-    <a href="../../index.php"><button>Cancelar</button></a>
+    <a href="../../Stetic100/index.php"><button>Cancelar</button></a>
 </body>
 </html>
