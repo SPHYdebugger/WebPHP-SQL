@@ -1,6 +1,6 @@
 <?php
-require("includes/header.php");
-require ('resources/db/connect-db.php');
+require("../includes/header.php");
+require('../resources/db/connect-db.php');
 
 
 if (isset($_GET['id']) && is_numeric($_GET['id'])) {
@@ -27,7 +27,7 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
 
 
     <div class="container col-6">
-        <form action="resources/db/Product/editProduct.php" method="post" enctype= "multipart/form-data">
+        <form action="../Controllers/product_controller.php?action=edit_product" method="post" enctype= "multipart/form-data">
             <div class="mb-3">
                 <label for="ID" class="form-label">ID</label>
                 <input type="text" value="<?php echo $product['ID']; ?>" class="form-control" id="ID" name="ID" readonly>
@@ -60,6 +60,4 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
     </div>
 </main>
 
-<?php
-include("includes/footer.php");
-?>
+

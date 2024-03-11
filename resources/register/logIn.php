@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-require ('../../resources/db/connect-db.php');
+require ('../db/connect-db.php');
 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -9,8 +9,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $contrasena_ingresada = $_POST['contrasena'];
 
     try {
-        $stmt = $dbh->prepare("SELECT contraseña FROM users WHERE nombre = :nombre");
-        $stmt->bindParam(':nombre', $nombre_usuario, PDO::PARAM_STR);
+        $stmt = $dbh->prepare("SELECT contraseña FROM users WHERE usuario = :usuario");
+        $stmt->bindParam(':usuario', $nombre_usuario, PDO::PARAM_STR);
         $stmt->execute();
 
         // Obtener la contraseña
@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             if ($contraseña == $contrasena_ingresada) {
                 $_SESSION['usuario_logado'] = $nombre_usuario;
-                header('Location: ..\..\index.php');
+                header('Location: ../../index.php');
                 exit();
             } else {
                 $mensaje_error = 'Contraseña incorrecta';
@@ -56,6 +56,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <input type="password" id="contrasena" name="contrasena" required><br><br>
     <button type="submit">Iniciar Sesión</button>
 </form>
-    <a href="../../index.php"><button>Cancelar</button></a>
+    <a href="../../Stetic100/index.php"><button>Cancelar</button></a>
 </body>
 </html>
