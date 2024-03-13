@@ -43,7 +43,7 @@
                                         <td>
                                             <form method="post" action="../Controllers/client_controller.php?action=delete_one">
                                                 <input type="hidden" name="deleteClient" value="<?php echo $client['ID']; ?>">
-                                                <button type="submit" class="btn btn-primary btn-sm my-2">BORRAR</button>
+                                                <button type="submit" class="btn btn-primary btn-sm my-2" >BORRAR</button>
                                             </form>
                                         </td>
                                     <?php } ?>

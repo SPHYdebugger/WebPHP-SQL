@@ -5,12 +5,12 @@ require ('../db/connect-db.php');
 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $nombre_usuario = $_POST['usuario'];
+    $usuario = $_POST['usuario'];
     $contrasena_ingresada = $_POST['contrasena'];
 
     try {
-        $stmt = $dbh->prepare("SELECT contraseña FROM users WHERE usuario = :usuario");
-        $stmt->bindParam(':usuario', $nombre_usuario, PDO::PARAM_STR);
+        $stmt = $dbh->prepare("SELECT * FROM users WHERE usuario = :usuario");
+        $stmt->bindParam(':usuario', $usuario, PDO::PARAM_STR);
         $stmt->execute();
 
         // Obtener la contraseña
@@ -18,6 +18,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         if ($resultado) {
             $contraseña = $resultado['contraseña'];
+            $nombre_usuario = $resultado['nombre'];
+            $_SESSION['usuario_logado'] = $nombre_usuario;
 
             if ($contraseña == $contrasena_ingresada) {
                 $_SESSION['usuario_logado'] = $nombre_usuario;
@@ -56,6 +58,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <input type="password" id="contrasena" name="contrasena" required><br><br>
     <button type="submit">Iniciar Sesión</button>
 </form>
-    <a href="../../Stetic100/index.php"><button>Cancelar</button></a>
+    <a href="../../index.php"><button>Cancelar</button></a>
 </body>
 </html>

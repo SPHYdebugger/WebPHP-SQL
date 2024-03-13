@@ -22,14 +22,14 @@ function add_one_buy($dbh){
             $usuario = $_POST['usuario'];
             $cliente = $_POST['cliente'];
             $producto = $_POST['producto'];
-            $fecha_compra = date("d-m-Y-H-i-s");
+            $fecha_compra = date("d-m-Y/H:i:s");
 
 
             try {
-                $stmt = $dbh->prepare("INSERT INTO buys (usuario, cliente, producto, fecha_compra) VALUES (:usuario, :cliente, :producto, :fecha_compra)");
-                $stmt->bindParam(':usuario', $usuario, PDO::PARAM_STR);
-                $stmt->bindParam(':cliente', $cliente, PDO::PARAM_STR);
-                $stmt->bindParam(':producto', $producto, PDO::PARAM_STR);
+                $stmt = $dbh->prepare("INSERT INTO buys (nombre_usuario, nombre_cliente, nombre_producto, fecha_compra) VALUES (:nombre_usuario, :nombre_cliente, :nombre_producto, :fecha_compra)");
+                $stmt->bindParam(':nombre_usuario', $usuario, PDO::PARAM_STR);
+                $stmt->bindParam(':nombre_cliente', $cliente, PDO::PARAM_STR);
+                $stmt->bindParam(':nombre_producto', $producto, PDO::PARAM_STR);
                 $stmt->bindParam(':fecha_compra', $fecha_compra, PDO::PARAM_STR);
                 $stmt->execute();
             } catch (PDOException $e) {

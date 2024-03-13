@@ -50,7 +50,7 @@ session_start();
 <header>
     <nav class="navbar navbar-expand-md navbar-dark fixed-top" style="padding: 5px; background-color: #EAD0D1; height: 80px; ">
         <a class="navbar-brand" href="../Stetic100/index.php">
-            <img src="../../resources/images/logo.png" alt="" style="width: 120px; height: 80px; margin: -8%;">
+            <img src="../resources/images/logo.png" alt="" style="width: 120px; height: 80px; margin: -8%;">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>

@@ -61,6 +61,18 @@ function delete_one_product($dbh)
         // Obtener el ID del producto que se va a borrar
         $IDToDelete = $_POST['deleteProduct'];
         try {
+
+            // Obtener el nombre del producto
+            $stmt = $dbh->prepare('SELECT nombre FROM products WHERE ID = :ID');
+            $stmt->bindParam(':ID', $IDToDelete, PDO::PARAM_STR);
+            $stmt->execute();
+            $nombre_producto = $stmt->fetchColumn();
+
+            // Eliminar las compras asociadas al producto
+            $stmt_delete_buys = $dbh->prepare('DELETE FROM buys WHERE nombre_producto = :nombre_producto');
+            $stmt_delete_buys->bindParam(':nombre_producto', $nombre_producto, PDO::PARAM_STR);
+            $stmt_delete_buys->execute();
+
             $stmt = $dbh->prepare('DELETE FROM products WHERE ID = :ID');
             $stmt->bindParam(':ID', $IDToDelete, PDO::PARAM_STR);
             $stmt->execute();
@@ -174,7 +186,7 @@ function add_one_product($dbh)
                 $imagen_contenido = file_get_contents($imagen_tmp);
             } else {
                 // Si no se envió una imagen, utiliza una imagen por defecto
-                $imagen_contenido = file_get_contents('resources/images/productos.png');
+                $imagen_contenido = file_get_contents('../resources/images/productos.png');
             }
             try {
 

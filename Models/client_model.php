@@ -18,7 +18,20 @@ function delete_one_client($dbh){
         $IDToDelete = $_POST['deleteClient'];
 
         try {
-            // Preparar la consulta para borrar el cliente con el DNI específico
+            // Obtener el nombre del cliente
+            $stmt = $dbh->prepare('SELECT nombre FROM clients WHERE ID = :ID');
+            $stmt->bindParam(':ID', $IDToDelete, PDO::PARAM_STR);
+            $stmt->execute();
+            $nombre_cliente = $stmt->fetchColumn();
+
+            // Eliminar las compras asociadas al cliente
+            $stmt_delete_buys = $dbh->prepare('DELETE FROM buys WHERE nombre_cliente = :nombre_cliente');
+            $stmt_delete_buys->bindParam(':nombre_cliente', $nombre_cliente, PDO::PARAM_STR);
+            $stmt_delete_buys->execute();
+
+
+
+            //  el cliente con el ID
             $stmt = $dbh->prepare('DELETE FROM clients WHERE ID = :ID');
             $stmt->bindParam(':ID', $IDToDelete, PDO::PARAM_STR);
             $stmt->execute();
