@@ -21,9 +21,9 @@
                 <?php
                 foreach ($resultado as $buy) : ?>
                     <tr>
-                        <td><?php echo $buy['usuario']; ?></td>
-                        <td><?php echo $buy['cliente']; ?></td>
-                        <td><?php echo $buy['producto']; ?></td>
+                        <td><?php echo $buy['nombre_usuario']; ?></td>
+                        <td><?php echo $buy['nombre_cliente']; ?></td>
+                        <td><?php echo $buy['nombre_producto']; ?></td>
                         <td><?php echo $buy['fecha_compra']; ?></td>
 
                     </tr>

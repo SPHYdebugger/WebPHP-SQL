@@ -38,9 +38,14 @@ session_start();
     </style>
 
     <script>
-        function goBack() {
+        function atras() {
             window.history.back();
         }
+
+
+
+
+
     </script>
 
 
