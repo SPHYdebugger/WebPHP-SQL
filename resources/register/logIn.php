@@ -8,6 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $usuario = $_POST['usuario'];
     $contrasena_ingresada = $_POST['contrasena'];
 
+
     try {
         $stmt = $dbh->prepare("SELECT * FROM users WHERE usuario = :usuario");
         $stmt->bindParam(':usuario', $usuario, PDO::PARAM_STR);
@@ -23,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             if ($contraseña == $contrasena_ingresada) {
                 $_SESSION['usuario_logado'] = $nombre_usuario;
-                header('Location: ../../public/index.php');
+                header('Location: ../../app/Views/home.php');
                 exit();
             } else {
                 $mensaje_error = 'Contraseña incorrecta';
@@ -58,6 +59,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <input type="password" id="contrasena" name="contrasena" required><br><br>
     <button type="submit">Iniciar Sesión</button>
 </form>
-    <a href="../../public/index.php"><button>Cancelar</button></a>
+    <a href="../../Stetic100/public/index.php"><button>Cancelar</button></a>
 </body>
 </html>

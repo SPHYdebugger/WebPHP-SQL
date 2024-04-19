@@ -48,13 +48,13 @@ if(isset($_GET['action'])) {
 
 function list_all($dbh)
 {
-    include('../../includes/header.php');
+    include('../Views/includes/header.php');
     require('../../app/Models/client_model.php');
 
     $resultado = list_all_clients($dbh);
 
     include('../../app/Views/client/clients.php');
-    include("../../includes/footer.php");
+    include("../Views/includes/footer.php");
 }
 
 function delete_one($dbh)
@@ -65,17 +65,17 @@ function delete_one($dbh)
 
 function show_edit_form($dbh)
 {
-    include('../../includes/header.php');
+    include('../Views/includes/header.php');
     require('../../app/Models/client_model.php');
 
     $client= get_one_client($dbh);
 
     include('../../app/Views/client/editClientForm.php');
-    include("../../includes/footer.php");
+    include("../Views/includes/footer.php");
 }
 
 function edit_client($dbh){
-    include('../../includes/header.php');
+    include('../Views/includes/header.php');
     require('../../app/Models/client_model.php');
 
     edit_one_client($dbh);
@@ -83,20 +83,20 @@ function edit_client($dbh){
     $tamano= count_clients($dbh);
 
     include('../../app/Views/client/showClient.php');
-    include("../../includes/footer.php");
+    include("../Views/includes/footer.php");
 }
 
 
 
 function show_add_form($dbh)
 {
-    include('../../includes/header.php');
+    include('../Views/includes/header.php');
     include('../../app/Views/client/addClientForm.php');
-    include("../../includes/footer.php");
+    include("../Views/includes/footer.php");
 }
 function add_client($dbh)
 {
-    include('../../includes/header.php');
+    include('../Views/includes/header.php');
     require('../../app/Models/client_model.php');
 
     add_one_client($dbh);
@@ -104,7 +104,7 @@ function add_client($dbh)
     $tamano= count_clients($dbh);
 
     include('../../app/Views/client/showClient.php');
-    include("../../includes/footer.php");
+    include("../Views/includes/footer.php");
 
 }
 

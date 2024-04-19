@@ -24,6 +24,6 @@
     </div>
 
     <div class="d-flex justify-content-center">
-        <a href="../../../public/index.php" class="btn btn-primary my-2">Volver a inicio</a>
+        <a href="../home.php" class="btn btn-primary my-2">Volver a inicio</a>
     </div>
 </main>

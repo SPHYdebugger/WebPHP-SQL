@@ -10,7 +10,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="Tienda WEB APP" content="">
     <meta name="Santiago Perez" content="">
-    <link rel="icon" href="../resources/images/flor.png">
+    <link rel="icon" href="../../../resources/images/flor.png">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
     <title>STETIC100 Tienda WEB </title>

@@ -9,7 +9,7 @@ session_destroy();
 
 
 // Redirigir a la página de inicio después de cerrar la sesión
-header('Location: ../../public/index.php');
+header('Location: ../../app/Views/home.php');
 exit();
 ?>
 

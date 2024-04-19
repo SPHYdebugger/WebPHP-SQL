@@ -35,7 +35,7 @@ require("../../includes/header.php");
         </form>
 
         <div class="container  d-flex justify-content-center">
-            <a href="../../public/index.php" type="button" class="btn btn-primary col-4" style="margin-top: 20px;">Cancelar el registro</a>
+            <a href="../../app/Views/home.php" type="button" class="btn btn-primary col-4" style="margin-top: 20px;">Cancelar el registro</a>
         </div>
     </div>
 </main>
