@@ -8,7 +8,7 @@
 
 
     <div class="container col-6">
-        <form action="../Controllers/product_controller.php?action=add_product" method="post" enctype= "multipart/form-data">
+        <form action="../../app/Controllers/product_controller.php?action=add_product" method="post" enctype= "multipart/form-data">
 
             <div class="mb-3">
                 <label for="name" class="form-label">NOMBRE</label>
@@ -36,7 +36,7 @@
         </form>
 
         <div class="container  d-flex justify-content-center">
-            <a href="../Controllers/product_controller.php" type="button" class="btn btn-primary col-4" style="margin-top: 20px;">Volver a la lista de productos</a>
+            <a href="../../app/Controllers/product_controller.php" type="button" class="btn btn-primary col-4" style="margin-top: 20px;">Volver a la lista de productos</a>
         </div>
     </div>
 </main>

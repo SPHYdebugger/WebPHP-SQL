@@ -1,6 +1,6 @@
 <?php
 
-require('../resources/db/connect-db.php');
+require('../../resources/db/connect-db.php');
 
 if(isset($_GET['action'])) {
     $action = $_GET['action'];
@@ -52,69 +52,69 @@ if(isset($_GET['action'])) {
 
 function show_list_products($dbh)
 {
-    include('../includes/header.php');
-    require ('../Models/product_model.php');
+    include('../../includes/header.php');
+    require('../../app/Models/product_model.php');
 
 
     $products = list_products($dbh);
 
-    include ('../Views/products.php');
-    include("../includes/footer.php");
+    include('../../app/Views/product/products.php');
+    include("../../includes/footer.php");
 }
 
 function get_image_product($dbh){
-    require ('../Models/product_model.php');
+    require('../../app/Models/product_model.php');
     get_image($dbh);
 }
 
 function delete_one($dbh)
 {
-    require ('../Models/product_model.php');
+    require('../../app/Models/product_model.php');
     delete_one_product($dbh);
 }
 
 function show_edit_form($dbh)
 {
-    include('../includes/header.php');
-    require ('../Models/product_model.php');
+    include('../../includes/header.php');
+    require('../../app/Models/product_model.php');
 
     $product= get_one_product($dbh);
 
-    include ('../Views/editProductForm.php');
-    include("../includes/footer.php");
+    include('../../app/Views/product/editProductForm.php');
+    include("../../includes/footer.php");
 }
 
 function edit_product($dbh){
-    include('../includes/header.php');
-    require ('../Models/product_model.php');
+    include('../../includes/header.php');
+    require('../../app/Models/product_model.php');
 
     edit_one_product($dbh);
     $product= get_product($dbh);
 
 
-    include ('../Views/showProduct.php');
-    include("../includes/footer.php");
+    include('../../app/Views/product/showProduct.php');
+    include("../../includes/footer.php");
 }
 
 
 
 function show_add_form()
 {
-    include('../includes/header.php');
-    include ('../Views/addProductForm.php');
-    include("../includes/footer.php");
+    include('../../includes/header.php');
+    include('../../app/Views/product/addProductForm.php');
+    include("../../includes/footer.php");
 }
 function add_product($dbh)
 {
-    include('../includes/headerIndex.php');
-    require ('../Models/product_model.php');
+    include('../../includes/headerIndex.php');
+    require('../../app/Models/product_model.php');
 
     add_one_product($dbh);
     $product= get_product($dbh);
     $tamano= count_products($dbh);
 
-    include('../Views/showProduct.php');
-    include("../includes/footer.php");
+    include('../../app/Views/product/showProduct.php');
+    include("../../includes/footer.php");
 
 }
 

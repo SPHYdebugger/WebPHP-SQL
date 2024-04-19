@@ -1,8 +1,8 @@
 <?php
 
 
-require('../resources/db/connect-db.php');
-require('../Classes/Product.php');
+require('../../resources/db/connect-db.php');
+require('../../Classes/Product.php');
 
 
 function list_products($dbh)

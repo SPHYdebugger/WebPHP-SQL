@@ -58,7 +58,7 @@ require ('../db/connect-db.php');
 
     ?>
     </br>
-    <a href="../../index.php" class="btn btn-primary my-2">Volver a INICIO</a>
+    <a href="../../public/index.php" class="btn btn-primary my-2">Volver a INICIO</a>
 
 </div>
 <?php

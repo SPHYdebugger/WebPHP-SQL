@@ -5,7 +5,7 @@
         <?php
         if(isset($_SESSION['usuario_logado'])) { ?>
             <div class="d-flex justify-content-center">
-                <a href="../Controllers/buy_controller.php?action=add_one" class="btn btn-primary my-2">Registrar una compra</a>
+                <a href="../../app/Controllers/buy_controller.php?action=add_one" class="btn btn-primary my-2">Registrar una compra</a>
             </div>
         <?php }?>
         <h2 style="text-align: center;">LISTA DE COMPRAS</h2>
@@ -35,7 +35,7 @@
     </div>
 
     <div class="d-flex justify-content-center">
-        <a href="../index.php" class="btn btn-primary my-2">Volver a inicio</a>
+        <a href="../../public/index.php" class="btn btn-primary my-2">Volver a inicio</a>
     </div>
 
 </main>

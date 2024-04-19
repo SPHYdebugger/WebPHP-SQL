@@ -1,8 +1,8 @@
 <?php
 
 
-require('../resources/db/connect-db.php');
-require('../Classes/Shop.php');
+require('../../resources/db/connect-db.php');
+require('../../Classes/Shop.php');
 
 
 function list_shops($dbh)
@@ -40,7 +40,7 @@ function send_m(){
                     throw new Exception('Error al enviar el correo');
                 }
                 echo 'Correo enviado con éxito';
-                echo '<br><a href="../index.php" class="btn btn-primary my-2">Volver a inicio</a>';
+                echo '<br><a href="../../public/index.php" class="btn btn-primary my-2">Volver a inicio</a>';
             } catch (Exception $e){
                 echo $e->getMessage();
             }

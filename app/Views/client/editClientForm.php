@@ -8,7 +8,7 @@
 
 
     <div class="container col-6">
-        <form action="../Controllers/client_controller.php?action=edit_client" method="post" enctype= "multipart/form-data">
+        <form action="../../app/Controllers/client_controller.php?action=edit_client" method="post" enctype= "multipart/form-data">
             <div class="mb-3">
                 <label for="ID" class="form-label">ID</label>
                 <input type="text" value="<?php echo $client['ID']; ?>" class="form-control" id="ID" name="ID" readonly>
@@ -32,7 +32,7 @@
         </form>
 
         <div class="container  d-flex justify-content-center">
-            <a href="../Controllers/client_controller.php" type="button" class="btn btn-primary col-4" style="margin-top: 20px;">Volver a la lista de clientes</a>
+            <a href="../../app/Controllers/client_controller.php" type="button" class="btn btn-primary col-4" style="margin-top: 20px;">Volver a la lista de clientes</a>
         </div>
     </div>
 </main>

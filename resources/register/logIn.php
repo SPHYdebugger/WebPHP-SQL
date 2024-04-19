@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             if ($contraseña == $contrasena_ingresada) {
                 $_SESSION['usuario_logado'] = $nombre_usuario;
-                header('Location: ../../index.php');
+                header('Location: ../../public/index.php');
                 exit();
             } else {
                 $mensaje_error = 'Contraseña incorrecta';
@@ -58,6 +58,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <input type="password" id="contrasena" name="contrasena" required><br><br>
     <button type="submit">Iniciar Sesión</button>
 </form>
-    <a href="../../index.php"><button>Cancelar</button></a>
+    <a href="../../public/index.php"><button>Cancelar</button></a>
 </body>
 </html>
