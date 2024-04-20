@@ -171,6 +171,19 @@ function add_one_product($dbh)
 {
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
+        if (empty($_POST['nombre']) || empty($_POST['precio'])) {
+            // Si falta alguno de los campos obligatorios, mensaje de error
+            $_SESSION['error'] = 'El nombre y el precio del producto son obligatorios.';
+            header('Location: ../Controllers/product_controller.php?action=add_one');
+            exit();
+        }
+
+        if (!is_numeric($_POST['precio'])) {
+            $_SESSION['error'] = 'El precio debe ser un número válido.';
+            header('Location: ../Controllers/product_controller.php?action=add_one');
+            exit();
+        }
+
         if (isset($_POST['nombre']) && isset($_POST['precio'])) {
             // Obtener los datos del formulario
             $nombre = $_POST['nombre'];
@@ -186,7 +199,7 @@ function add_one_product($dbh)
                 $imagen_contenido = file_get_contents($imagen_tmp);
             } else {
                 // Si no se envió una imagen, utiliza una imagen por defecto
-                $imagen_contenido = file_get_contents('../resources/images/productos.png');
+                $imagen_contenido = file_get_contents('../../resources/images/productos.png');
             }
             try {
 

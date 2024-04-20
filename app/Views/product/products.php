@@ -3,7 +3,7 @@
     <div class="container" style="margin-top: 150px">
         <?php if(isset($_SESSION['usuario_logado'])) { ?>
             <div class="d-flex justify-content-center">
-                <a href="../../Controllers/product_controller.php?action=add_one" class="btn btn-primary my-2">Registrar un producto</a>
+                <a href="../../app/Controllers/product_controller.php?action=add_one" class="btn btn-primary my-2">Registrar un producto</a>
             </div>
         <?php }?>
         <h2 style="text-align: center;">LISTA DE PRODUCTOS POR ZONAS</h2>

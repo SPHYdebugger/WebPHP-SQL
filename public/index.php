@@ -1,4 +1,8 @@
 <?php
+
+// LISTO PARA PRIMERA ENTREGA
+
+
 require('../includes/headerIndex.php');
 require('../resources/db/connect-db.php');
 setcookie("idioma","selecionar la opción de idioma");

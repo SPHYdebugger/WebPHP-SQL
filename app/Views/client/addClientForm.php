@@ -1,7 +1,13 @@
 
 <main>
 
-
+    <!-- Mostrar mensaje de error si existe -->
+    <?php if (isset($_SESSION['error'])): ?>
+        <div class="alert alert-danger" style="margin-top: 100px; margin-bottom: -100px" role="alert">
+            <?php echo $_SESSION['error']; ?>
+        </div>
+        <?php unset($_SESSION['error']); ?>
+    <?php endif; ?>
 
     <hr class="featurette-divider" style="margin-top: 150px">
     <h2 style="text-align: center;">REGISTRO DE CLIENTE</h2>
