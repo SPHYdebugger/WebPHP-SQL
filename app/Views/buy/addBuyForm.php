@@ -8,7 +8,7 @@
 
 
     <div class="container col-6">
-        <form action="../Controllers/buy_controller.php?action=add_buy" method="post" enctype= "multipart/form-data">
+        <form action="../../app/Controllers/buy_controller.php?action=add_buy" method="post" enctype= "multipart/form-data">
             <div class="mb-3">
                 <label for="usuario" class="form-label">USUARIO</label>
                 <input type="text" value="<?php echo $_SESSION['usuario_logado']; ?>" class="form-control" id="usuario" name="usuario" readonly>
@@ -38,7 +38,7 @@
         </form>
 
         <div class="container  d-flex justify-content-center">
-            <a href="clients.php" type="button" class="btn btn-primary col-4" style="margin-top: 20px;">Volver a la lista de clientes</a>
+            <a href="../../app/Controllers/buy_controller.php" type="button" class="btn btn-primary col-4" style="margin-top: 20px;">Volver a la lista de compras</a>
         </div>
     </div>
 </main>

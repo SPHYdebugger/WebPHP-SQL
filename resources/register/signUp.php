@@ -4,7 +4,13 @@ require("../../includes/header.php");
 
 <main>
 
-
+    <!-- Mostrar mensaje de error si existe -->
+    <?php if (isset($_SESSION['error'])): ?>
+        <div class="alert alert-danger" style="margin-top: 100px; margin-bottom: -100px" role="alert">
+            <?php echo $_SESSION['error']; ?>
+        </div>
+        <?php unset($_SESSION['error']); ?>
+    <?php endif; ?>
 
     <hr class="featurette-divider" style="margin-top: 150px">
     <h2 style="text-align: center;">REGISTRO DE NUEVO USUARIO</h2>
@@ -35,7 +41,7 @@ require("../../includes/header.php");
         </form>
 
         <div class="container  d-flex justify-content-center">
-            <a href="../../index.php" type="button" class="btn btn-primary col-4" style="margin-top: 20px;">Cancelar el registro</a>
+            <a href="../../public/index.php" type="button" class="btn btn-primary col-4" style="margin-top: 20px;">Cancelar el registro</a>
         </div>
     </div>
 </main>

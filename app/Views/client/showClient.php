@@ -18,7 +18,7 @@
             <p>El tamaño del array es: <?php echo $tamano; ?></p>
 
     </br>
-    <a href="../Controllers/client_controller.php" class="btn btn-primary my-2">Volver a clientes</a>
+    <a href="../../app/Controllers/client_controller.php" class="btn btn-primary my-2">Volver a clientes</a>
 
 </div>
 

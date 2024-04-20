@@ -117,6 +117,14 @@ function edit_one_client($dbh){
 
 function add_one_client($dbh){
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+        if (empty($_POST['nombre']) || empty($_POST['DNI'])|| empty($_POST['email'])) {
+            // Si falta alguno de los campos obligatorios, mensaje de error
+            $_SESSION['error'] = 'El nombre,DNI y email son obligatorios.';
+            header('Location: ../Controllers/client_controller.php?action=add_one');
+            exit();
+        }
+
         // Verificar que se hayan enviado datos
         if (isset($_POST['nombre']) && isset($_POST['email'])) {
             // Obtener los datos del formulario

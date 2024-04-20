@@ -9,6 +9,13 @@ require ('../db/connect-db.php');
 
     <?php
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+        if (empty($_POST['usuario']) || empty($_POST['nombre']) || empty($_POST['password']) || empty($_POST['mail'])) {
+            // Si falta alguno de los campos obligatorios, mensaje de error
+            $_SESSION['error'] = 'Falta algún dato por completar. Son todos obligatorios.';
+            header('Location: signUp.php');
+            exit();
+        }
         // Verificar que se hayan enviado datos
         if (isset($_POST['usuario']) && isset($_POST['nombre']) && isset($_POST['password']) && isset($_POST['mail'])) {
             // Obtener los datos del formulario
@@ -58,7 +65,7 @@ require ('../db/connect-db.php');
 
     ?>
     </br>
-    <a href="../../index.php" class="btn btn-primary my-2">Volver a INICIO</a>
+    <a href="../../public/index.php" class="btn btn-primary my-2">Volver a INICIO</a>
 
 </div>
 <?php

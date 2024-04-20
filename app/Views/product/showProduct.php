@@ -12,7 +12,7 @@
 
     <div class="col-md-4 mb-4">
         <div class="card" >
-            <img src="../Controllers/product_controller.php?action=get_image&id=<?php echo $product['ID']; ?>" class="card-img-top" alt="...">
+            <img src="../../app/Controllers/product_controller.php?action=get_image&id=<?php echo $product['ID']; ?>" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">NOMBRE: <?php echo $product['nombre'];?></h5>
                 <p class="card-text" style="min-height: 100px;">DESCRIPCIÓN: <?php echo $product['descripcion']; ?></p>
@@ -27,7 +27,7 @@
 </div>
 <br>
 <div class="d-flex justify-content-center" style="margin-top: 10px;">
-    <a href="../Controllers/product_controller.php" class="btn btn-primary my-2">Volver a productos</a>
+    <a href="../../app/Controllers/product_controller.php" class="btn btn-primary my-2">Volver a productos</a>
 </div>
 
 

@@ -1,14 +1,20 @@
 
 <main>
 
-
+    <!-- Mostrar mensaje de error si existe -->
+    <?php if (isset($_SESSION['error'])): ?>
+        <div class="alert alert-danger" style="margin-top: 100px; margin-bottom: -100px" role="alert">
+            <?php echo $_SESSION['error']; ?>
+        </div>
+        <?php unset($_SESSION['error']); ?>
+    <?php endif; ?>
 
     <hr class="featurette-divider" style="margin-top: 150px">
     <h2 style="text-align: center;">REGISTRO DE CLIENTE</h2>
 
 
     <div class="container col-6">
-        <form action="../Controllers/client_controller.php?action=add_client" method="post" enctype= "multipart/form-data">
+        <form action="../../app/Controllers/client_controller.php?action=add_client" method="post" enctype= "multipart/form-data">
             <div class="mb-3">
                 <label for="DNI" class="form-label">DNI</label>
                 <input type="text" class="form-control" id="DNI" name="DNI">
@@ -28,7 +34,7 @@
         </form>
 
         <div class="container  d-flex justify-content-center">
-            <a href="../Controllers/client_controller.php" type="button" class="btn btn-primary col-4" style="margin-top: 20px;">Volver a la lista de clientes</a>
+            <a href="../../app/Controllers/client_controller.php" type="button" class="btn btn-primary col-4" style="margin-top: 20px;">Volver a la lista de clientes</a>
         </div>
     </div>
 </main>

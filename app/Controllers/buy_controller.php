@@ -1,6 +1,6 @@
 <?php
 
-require('../resources/db/connect-db.php');
+require('../../resources/db/connect-db.php');
 
 if(isset($_GET['action'])) {
     $action = $_GET['action'];
@@ -30,35 +30,35 @@ if(isset($_GET['action'])) {
 
 function show_list_buys($dbh)
 {
-    include('../includes/header.php');
-    require ('../Models/buy_model.php');
+    include('../../includes/header.php');
+    require('../../app/Models/buy_model.php');
 
     $resultado = list_buys($dbh);
 
-    include ('../Views/buys.php');
-    include("../includes/footer.php");
+    include('../../app/Views/buy/buys.php');
+    include("../../includes/footer.php");
 }
 
 
 function show_add_form($dbh)
 {
-    include('../includes/header.php');
-    include('../Models/client_model.php');
+    include('../../includes/header.php');
+    include('../../app/Models/client_model.php');
     $clientes= list_all_clients($dbh);
-    include('../Models/product_model.php');
+    include('../../app/Models/product_model.php');
     $productos= list_products($dbh);
-    include ('../Views/addBuyForm.php');
-    include("../includes/footer.php");
+    include('../../app/Views/buy/addBuyForm.php');
+    include("../../includes/footer.php");
 }
 function add_buy($dbh)
 {
-    include('../includes/header.php');
-    require ('../Models/buy_model.php');
+    include('../../includes/header.php');
+    require('../../app/Models/buy_model.php');
 
     add_one_buy($dbh);
 
 
 
-    include("../includes/footer.php");
+    include("../../includes/footer.php");
 
 }

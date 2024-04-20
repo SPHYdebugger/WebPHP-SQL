@@ -1,6 +1,6 @@
 <?php
 
-require('../resources/db/connect-db.php');
+require('../../resources/db/connect-db.php');
 
 if(isset($_GET['action'])) {
     $action = $_GET['action'];
@@ -33,27 +33,27 @@ if(isset($_GET['action'])) {
 
 function show_list_shops($dbh)
 {
-    include('../includes/header.php');
-    require ('../Models/shop_model.php');
+    include('../../includes/header.php');
+    require('../../app/Models/shop_model.php');
 
 
     $shops = list_shops($dbh);
 
-    include ('../Views/shops.php');
-    include("../includes/footer.php");
+    include('../../app/Views/shop/shops.php');
+    include("../../includes/footer.php");
 }
 
 function show_mail_form()
 {
-    include('../includes/header.php');
-    require ('../Models/shop_model.php');
+    include('../../includes/header.php');
+    require('../../app/Models/shop_model.php');
 
-    include ('../Views/mailForm.php');
-    include("../includes/footer.php");
+    include('../../app/Views/shop/mailForm.php');
+    include("../../includes/footer.php");
 }
 
 
 function send_mail(){
-    require ('../Models/shop_model.php');
+    require('../../app/Models/shop_model.php');
     send_m();
 }
