@@ -39,8 +39,7 @@ function send_m(){
                 if(!mail($to,$subject,$message,$headers)){
                     throw new Exception('Error al enviar el correo');
                 }
-                echo 'Correo enviado con éxito';
-                echo '<br><a href="../../public/index.php" class="btn btn-primary my-2">Volver a inicio</a>';
+                header('Location: ../Controllers/shop_controller.php?action=mail_ok');
             } catch (Exception $e){
                 echo $e->getMessage();
             }

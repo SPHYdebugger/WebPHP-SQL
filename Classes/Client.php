@@ -32,6 +32,6 @@ class Client implements JsonSerializable {
     }
 }
 
-?>
+
 
 
