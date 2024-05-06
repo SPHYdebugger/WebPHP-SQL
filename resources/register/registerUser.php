@@ -2,7 +2,7 @@
 include('../../includes/header.php');
 
 require ('../db/connect-db.php');
-
+require ('../../app/Models/shop_model.php');
 ?>
 <div class="container" style="margin-top: 150px ; text-align: center; margin-bottom: 100px">
 
@@ -32,6 +32,26 @@ require ('../db/connect-db.php');
                 $stmt->bindParam(':password', $password, PDO::PARAM_STR);
                 $stmt->bindParam(':mail', $mail, PDO::PARAM_STR);
                 $stmt->execute();
+
+                // Asegurarse de que todos los datos han sido enviados desde el formulario
+
+
+                $subject = "Bienvenid@ a nuestra tienda";
+                $message = "Stetic100 le da la bienvenida a nuestra cadena de tiendas especializadas en estética";
+                $headers = 'From: sanpher15@gmail.com'. "\r\n" .
+                    'Reply-To: sanpher15@gmail.com'. "\r\n" .
+                    'X-Mailer: PHP/' . phpversion();
+
+                //Intentar enviar el correo
+                try{
+                    if(!mail($mail,$subject,$message,$headers)){
+                        throw new Exception('Error al enviar el correo');
+                    }
+                } catch (Exception $e){
+                    echo $e->getMessage();
+                }
+
+
             } catch (PDOException $e) {
                 echo "ERROR: " . $e->getMessage();
             }
