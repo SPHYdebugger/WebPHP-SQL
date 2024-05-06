@@ -1,6 +1,6 @@
 <?php
 
-// LISTO PARA PRIMERA ENTREGA
+// LISTO PARA SEGUNDA ENTREGA 24/04/24
 
 
 require('../includes/headerIndex.php');

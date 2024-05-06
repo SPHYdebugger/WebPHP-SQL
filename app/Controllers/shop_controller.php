@@ -21,7 +21,10 @@ if(isset($_GET['action'])) {
             //mandar mail
             send_mail();
             break;
-
+        case 'mail_ok':
+            //Pantalla de OK
+            mail_ok();
+            break;
 
 
 
@@ -56,4 +59,10 @@ function show_mail_form()
 function send_mail(){
     require('../../app/Models/shop_model.php');
     send_m();
+}
+
+function mail_ok(){
+    include('../../includes/header.php');
+    include('../../app/Views/shop/mailOk.php');
+    include("../../includes/footer.php");
 }
