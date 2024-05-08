@@ -8,7 +8,7 @@
 
 
     <div class="container col-6">
-        <form action="../../app/Controllers/client_controller.php?action=edit_client" method="post" enctype= "multipart/form-data">
+        <form action="Stetic100/../../../app/Controllers/client_controller.php?action=edit_client" method="post" enctype= "multipart/form-data">
             <div class="mb-3">
                 <label for="ID" class="form-label">ID</label>
                 <input type="text" value="<?php echo $client['ID']; ?>" class="form-control" id="ID" name="ID" readonly>

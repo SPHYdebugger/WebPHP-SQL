@@ -27,7 +27,7 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
 
 
     <div class="container col-6">
-        <form action="../../app/Controllers/product_controller.php?action=edit_product" method="post" enctype= "multipart/form-data">
+        <form action="Stetic100/../../../app/Controllers/product_controller.php?action=edit_product" method="post" enctype= "multipart/form-data">
             <div class="mb-3">
                 <label for="ID" class="form-label">ID</label>
                 <input type="text" value="<?php echo $product['ID']; ?>" class="form-control" id="ID" name="ID" readonly>
